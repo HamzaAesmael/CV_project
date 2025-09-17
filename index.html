@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #0F62FE;
+      --color-primary-dark: #0B4EDA;
+      --color-text: #4B5563;
+      --color-heading: #1F2937;
+      --color-bg: #FFFFFF;
+      --color-section: #F3F4F6;
+      --color-accent: #10B981;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--color-text);
+      background: var(--color-bg);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--color-heading);
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    /* Make profile image in About section nicer */
+    #about img {
+      max-width: 250px;
+      border: 5px solid #f8f9fa;
+    }
+
+    /* Add hover effect to project cards */
+    #projects .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #projects .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Project titles bold */
+    #projects .card-title {
+      font-weight: bold;
+    }
+
+    /* Section spacing */
+    section {
+      padding-top: 72px;
+      padding-bottom: 72px;
+    }
+     /* ===== SKILLS SECTION ===== */
+     #skills img {
+      transition: transform 0.3s ease;
+    }
+    #skills img:hover {
+      transform: scale(1.1);
+    }
+    #skills h5 {
+      margin-top: 15px;
+    }
+    #skills p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    #skills a {
+      text-decoration: none;
+    }
+    #skills a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== UNIVERSAL SPACING ===== */
+    section {
+      padding-top: 72px;
+      padding-bottom: 72px;
+    }
+    /* Alternating section backgrounds */
+    #projects, #skills, #certificates { background: var(--color-section); }
+
+    /* Navbar enhancements */
+    .navbar {
+      background: #111827;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+    .navbar .nav-link {
+      color: #E5E7EB;
+      transition: color 0.2s ease;
+    }
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus { color: var(--color-primary); }
+
+    /* Project cards */
+    #projects .card {
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    #projects .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.10);
+    }
+    #projects .card-title { color: var(--color-heading); }
+    #projects a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+    #projects a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Skills tiles */
+    #skills .col-md-3 {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      padding: 16px;
+      border-radius: 12px;
+    }
+    #skills .col-md-3:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+    #skills p { font-size: 0.98rem; color: var(--color-text); }
+
+    /* Section headings accent */
+    section h2 { position: relative; display: inline-block; }
+    section h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 40%;
+      height: 3px;
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 576px) {
+      h2 { font-size: 1.6rem; }
+      #about img { max-width: 200px; }
+      section { padding-top: 56px; padding-bottom: 56px; }
+    }
+    /* ===== CONTACT SECTION ===== */
+#contact img {
+  transition: transform 0.3s ease;
+}
+#contact img:hover {
+  transform: scale(1.15);
+}
+#contact h5 {
+  margin-top: 10px;
+  color: #000;
+}
+#contact a {
+  color: inherit;
+}
+#contact a:hover h5 {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+  
+  <!-- Navigation (optional for now) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">My Portfolio</a>
+    </div>
+  </nav>
+
+  <!-- Placeholder for sections -->
+  <main class="container my-5">
+    <!-- Sections like About, Projects, etc. will go here -->
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<section id="about" class="py-5">
+    <div class="row align-items-center">
+      <!-- Left side: Image -->
+      <div class="col-md-4 text-center">
+        <img src="images/about/1.jpeg" alt="My Photo" class="img-fluid rounded-circle shadow" loading="lazy">
+      </div>
+      <!-- Right side: Text -->
+      <div class="col-md-8">
+        <h2 class="mb-3">About Me</h2>
+        <p class="lead">
+          Hello! I'm Hamza Aesmael a Data Analyst with experience in data processing, visualization, insight generation, and report automation. Proficient
+          in Python and various data analysis tools and AI tools. 
+        </p>
+        <p>
+            Currently pursuing a Master's degree in Biotechnical Systems and
+            Technologies, building upon a completed Bachelor's in the same field. Eager to apply analytical skills to derive
+            actionable insights from complex datasets.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="certificates" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Certificates</h2>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <img src="images/Certificates/1.png" alt="Certificate 1" class="img-fluid rounded shadow-sm" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/Certificates/2.png" alt="Certificate 2" class="img-fluid rounded shadow-sm" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/Certificates/3.png" alt="Certificate 3" class="img-fluid rounded shadow-sm" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/Certificates/4.png" alt="Certificate 4" class="img-fluid rounded shadow-sm" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/Certificates/5.png" alt="Certificate 5" class="img-fluid rounded shadow-sm" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/Certificates/6.png" alt="Certificate 6" class="img-fluid rounded shadow-sm" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/Certificates/7.png" alt="Certificate 7" class="img-fluid rounded shadow-sm" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/Certificates/8.png" alt="Certificate 8" class="img-fluid rounded shadow-sm" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Projects</h2>
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img src="images/projects/1.png" class="card-img-top" alt="World Happiness Report dashboard preview" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">World Happiness Report</h5>
+              <p class="card-text">
+                A comprehensive analysis of the 2016 World Happiness Report: data cleaning, EDA, insightful visualizations, and dashboarding to uncover drivers of happiness across countries.
+              </p>
+              <p class="mb-2"><em>Blog snippet:</em> How do economy, health, and social support interact to shape national happiness? This project transforms raw survey data into an accessible story about what truly moves the needle for well‑being.
+              </p>
+              <ul class="text-start small mb-3">
+                <li>Rigorous cleaning and feature engineering of survey metrics</li>
+                <li>Exploratory analysis with clear, comparative visuals</li>
+                <li>Interactive dashboard to filter and benchmark countries</li>
+                <li>Actionable insights on top predictors of happiness</li>
+              </ul>
+              <p><a href="https://github.com/HamzaAesmael/World-Happiness-Report-2016---Data-Analysis" target="_blank" rel="noopener">Source Code</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img src="images/projects/2.png" class="card-img-top" alt="AI Tools Directory interface preview" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">AI Tools Directory</h5>
+              <p class="card-text">
+                A curated, user‑friendly directory of AI tools for students and researchers—discover apps for code generation, image creation, data viz, and more via a clean web UI.
+              </p>
+              <p class="mb-2"><em>Blog snippet:</em> The AI landscape is noisy. This directory cuts through the noise with a focused, trustworthy catalog that helps you find the right tool in minutes—not hours.
+              </p>
+              <ul class="text-start small mb-3">
+                <li>Category‑based browsing with concise, practical descriptions</li>
+                <li>Direct links to official sites and documentation</li>
+                <li>Search and filter for common research workflows</li>
+                <li>Lightweight, fast, and mobile‑friendly interface</li>
+              </ul>
+              <p><a href="https://github.com/HamzaAesmael/Ai-tools-directory" target="_blank" rel="noopener">Source Code</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img src="images/projects/3.png" class="card-img-top" alt="Online Retail analysis charts preview" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Online Retail Data Analysis</h5>
+              <p class="card-text">
+                Sales analytics on an online retail dataset: uncover top products and countries, customer behavior, and seasonality to guide merchandising and retention.
+              </p>
+              <p class="mb-2"><em>Blog snippet:</em> From raw invoices to revenue stories—this analysis reveals who buys what, when, and why it matters for growth.
+              </p>
+              <ul class="text-start small mb-3">
+                <li>RFM segmentation for customer value insights</li>
+                <li>Top‑seller and basket composition analysis</li>
+                <li>Country‑level performance and seasonality trends</li>
+                <li>Clean, reproducible data pipeline</li>
+              </ul>
+              <p><a href="https://github.com/HamzaAesmael/Online-Retail-Data-Analysis" target="_blank" rel="noopener">Source Code</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img src="images/projects/4.png" class="card-img-top" alt="Wine dataset EDA visuals preview" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Wine Dataset Analysis and Visualization</h5>
+              <p class="card-text">
+                Exploratory data analysis of the classic Wine dataset, mapping relationships between chemical attributes and wine classes with intuitive visuals.
+              </p>
+              <p class="mb-2"><em>Blog snippet:</em> Chemistry meets clarity—see how subtle shifts in acidity, phenols, and magnesium distinguish wine varieties.
+              </p>
+              <ul class="text-start small mb-3">
+                <li>Pairwise relationships and correlation heatmaps</li>
+                <li>Class separation via feature distributions</li>
+                <li>Dimensionality reduction for visual intuition</li>
+                <li>Well‑commented, reproducible notebooks</li>
+              </ul>
+              <p><a href="https://github.com/HamzaAesmael/Wine-Dataset-Analysis" target="_blank" rel="noopener">Source Code</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Project 5 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img src="images/projects/5.png" class="card-img-top" alt="Medical insurance analysis visuals preview" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Medical Insurance Cost Analysis</h5>
+              <p class="card-text">
+                Exploratory analysis of factors that affect insurance charges and a comparison of regression models (Linear, Ridge, Polynomial Features) for prediction.
+              </p>
+              <p class="mb-2"><em>Blog snippet:</em> Pricing health risk is complex—this project demystifies which factors matter most and how model choice shifts accuracy and fairness.
+              </p>
+              <ul class="text-start small mb-3">
+                <li>Feature impact exploration (age, BMI, smoking, region)</li>
+                <li>Baseline vs. regularized vs. polynomial models</li>
+                <li>Train/test rigor and performance comparison</li>
+                <li>Clear takeaways for model selection</li>
+              </ul>
+              <p><a href="https://github.com/HamzaAesmael/Medical-Insurance-Cost-Analysis" target="_blank" rel="noopener">Source Code</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Project 6 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img src="images/projects/6.png" class="card-img-top" alt="Car price prediction modeling preview" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Car Price Prediction - A Comparative Model Analysis</h5>
+              <p class="card-text">
+                A stepwise comparison of regression techniques—from simple baselines to more complex models—to understand bias/variance tradeoffs in car price prediction.
+              </p>
+              <p class="mb-2"><em>Blog snippet:</em> Rather than chasing the highest score, this study shows how model complexity affects real‑world reliability and why simpler can often win.
+              </p>
+              <ul class="text-start small mb-3">
+                <li>Progressive modeling with consistent evaluation
+                </li>
+                <li>Generalization focus: training vs. testing behavior</li>
+                <li>Feature prep and leakage‑aware validation</li>
+                <li>Clear guidance on model selection tradeoffs</li>
+              </ul>
+              <p><a href="https://github.com/HamzaAesmael/Car-Price-Prediction---A-Comparative-Model-Analysis" target="_blank" rel="noopener">Source Code</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Skills</h2>
+      <div class="row text-center g-4">
+        <!-- Skill 1 -->
+        <div class="col-md-3 col-sm-6">
+          <img src="images/skills/1.png" alt="Python" class="img-fluid mb-3" style="max-width:100px;" loading="lazy">
+          <h5 class="fw-bold">Python</h5>
+          <p>
+            Python programs to clean and prepare raw data by fixing missing values, formatting issues, and restructuring it for analysis. Then perform exploratory data analysis to uncover hidden patterns, trends, and insights within real-world datasets. Using data operations and statistical techniques, interpret data distributions and correlations to understand the underlying story. Finally, develop, evaluate, and deploy machine learning models, specifically regression, to generate predictions and provide a solid foundation for data-driven decision-making.
+          </p>
+        </div>
+        <!-- Skill 2 -->
+        <div class="col-md-3 col-sm-6">
+          <img src="images/skills/2.png" alt="Data Visualization" class="img-fluid mb-3" style="max-width:100px;" loading="lazy">
+          <h5 class="fw-bold">Data Visualization</h5>
+          <p>
+            Describe the use of data visualizations to talk about data and the results of data analysis. Explain what data‑driven stories are, why they matter, and the attributes that make them clear, credible, and persuasive.
+          </p>
+        </div>
+        <!-- Skill 3 -->
+        <div class="col-md-3 col-sm-6">
+          <img src="images/skills/3.png" alt="SQL" class="img-fluid mb-3" style="max-width:100px;" loading="lazy">
+          <h5 class="fw-bold">SQL</h5>
+          <p>
+            Define different types of data integrity and identify risks to data integrity. Develop basic SQL queries for use on databases. Apply basic SQL functions to clean string variables in a database. Describe the process of verifying data cleaning results.
+          </p>
+        </div>
+        <!-- Skill 4 -->
+        <div class="col-md-3 col-sm-6">
+          <img src="images/skills/4.png" alt="Data Storytelling" class="img-fluid mb-3" style="max-width:100px;" loading="lazy">
+          <h5 class="fw-bold">Data Storytelling</h5>
+          <p>
+            Identify Tableau as a data visualization tool and understand its uses. Explain principles and practices associated with effective presentations that turn analyses into memorable, action‑oriented stories.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-5">Contact Me</h2>
+      <div class="row justify-content-center g-4">
+        <!-- GitHub -->
+        <div class="col-md-3 col-sm-6">
+          <a href="https://github.com/HamzaAesmael?tab=repositories" target="_blank" class="d-block text-decoration-none" aria-label="Visit my GitHub repositories">
+            <img src="icons/GitHub.png" alt="GitHub" class="img-fluid mb-3" style="max-width:80px;">
+            <h5 class="fw-bold">GitHub</h5>
+          </a>
+        </div>
+        <!-- Telegram -->
+        <div class="col-md-3 col-sm-6">
+          <a href="https://t.me/Hamza0hamza0" target="_blank" class="d-block text-decoration-none" aria-label="Message me on Telegram">
+            <img src="icons/Telegram.png" alt="Telegram" class="img-fluid mb-3" style="max-width:80px;">
+            <h5 class="fw-bold">Telegram</h5>
+          </a>
+        </div>
+        <!-- WhatsApp -->
+        <div class="col-md-3 col-sm-6">
+          <a href="https://wa.me/79516775514" target="_blank" class="d-block text-decoration-none" aria-label="Chat with me on WhatsApp">
+            <img src="icons/What's up.png" alt="WhatsApp" class="img-fluid mb-3" style="max-width:80px;">
+            <h5 class="fw-bold">WhatsApp</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">My Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#certificates">Certificates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
